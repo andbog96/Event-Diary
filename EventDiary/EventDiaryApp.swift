@@ -1,10 +1,3 @@
-//
-//  EventDiaryApp.swift
-//  EventDiary
-//
-//  Created by Bogdanov Andrey on 06.11.2024.
-//
-
 import SwiftUI
 
 @main
