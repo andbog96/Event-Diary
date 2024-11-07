@@ -6,14 +6,33 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04B9775A2CDCAB3000F12C6D /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9774E2CDCAB3000F12C6D /* AddEventView.swift */; };
+		04B9775B2CDCAB3000F12C6D /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9774F2CDCAB3000F12C6D /* EventsView.swift */; };
+		04B9775C2CDCAB3000F12C6D /* TypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B977532CDCAB3000F12C6D /* TypesView.swift */; };
+		04B9775D2CDCAB3000F12C6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B977562CDCAB3000F12C6D /* ContentView.swift */; };
+		04B9775E2CDCAB3000F12C6D /* EventDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B977572CDCAB3000F12C6D /* EventDiaryApp.swift */; };
+		04B9775F2CDCAB3000F12C6D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B977582CDCAB3000F12C6D /* Model.swift */; };
+		04B977612CDCAB3000F12C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B977552CDCAB3000F12C6D /* Assets.xcassets */; };
+		04B977632CDCAC0200F12C6D /* AddTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B977622CDCAC0200F12C6D /* AddTypeView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		04B9772F2CDB763300F12C6D /* EventDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B9774E2CDCAB3000F12C6D /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		04B9774F2CDCAB3000F12C6D /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		04B977532CDCAB3000F12C6D /* TypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesView.swift; sourceTree = "<group>"; };
+		04B977552CDCAB3000F12C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04B977562CDCAB3000F12C6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04B977572CDCAB3000F12C6D /* EventDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDiaryApp.swift; sourceTree = "<group>"; };
+		04B977582CDCAB3000F12C6D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		04B977622CDCAC0200F12C6D /* AddTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		04B977312CDB763300F12C6D /* EventDiary */ = {
+		04B977652CDCB72B00F12C6D /* Settings */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EventDiary;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +51,7 @@
 		04B977262CDB763300F12C6D = {
 			isa = PBXGroup;
 			children = (
-				04B977312CDB763300F12C6D /* EventDiary */,
+				04B977592CDCAB3000F12C6D /* EventDiary */,
 				04B977302CDB763300F12C6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +62,38 @@
 				04B9772F2CDB763300F12C6D /* EventDiary.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		04B977502CDCAB3000F12C6D /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				04B9774F2CDCAB3000F12C6D /* EventsView.swift */,
+				04B9774E2CDCAB3000F12C6D /* AddEventView.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		04B977542CDCAB3000F12C6D /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				04B977532CDCAB3000F12C6D /* TypesView.swift */,
+				04B977622CDCAC0200F12C6D /* AddTypeView.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		04B977592CDCAB3000F12C6D /* EventDiary */ = {
+			isa = PBXGroup;
+			children = (
+				04B977552CDCAB3000F12C6D /* Assets.xcassets */,
+				04B977542CDCAB3000F12C6D /* Types */,
+				04B977502CDCAB3000F12C6D /* Events */,
+				04B977652CDCB72B00F12C6D /* Settings */,
+				04B977582CDCAB3000F12C6D /* Model.swift */,
+				04B977562CDCAB3000F12C6D /* ContentView.swift */,
+				04B977572CDCAB3000F12C6D /* EventDiaryApp.swift */,
+			);
+			path = EventDiary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,7 +112,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				04B977312CDB763300F12C6D /* EventDiary */,
+				04B977652CDCB72B00F12C6D /* Settings */,
 			);
 			name = EventDiary;
 			packageProductDependencies = (
@@ -109,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B977612CDCAB3000F12C6D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +171,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B9775A2CDCAB3000F12C6D /* AddEventView.swift in Sources */,
+				04B977632CDCAC0200F12C6D /* AddTypeView.swift in Sources */,
+				04B9775B2CDCAB3000F12C6D /* EventsView.swift in Sources */,
+				04B9775C2CDCAB3000F12C6D /* TypesView.swift in Sources */,
+				04B9775D2CDCAB3000F12C6D /* ContentView.swift in Sources */,
+				04B9775E2CDCAB3000F12C6D /* EventDiaryApp.swift in Sources */,
+				04B9775F2CDCAB3000F12C6D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +310,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EventDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 9SWB76WK2V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Event Diary";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -280,10 +340,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EventDiary/Preview Content\"";
 				DEVELOPMENT_TEAM = 9SWB76WK2V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Event Diary";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
