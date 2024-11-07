@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct EventsView: View {
     let model: Model
@@ -12,8 +13,15 @@ struct EventsView: View {
                     ContentUnavailableView("Добавьте события", systemImage: "tray")
                         .padding()
                 } else {
-                    List(model.events.reversed()) { event in
-                        item(event: event)
+                    List {
+                        ForEach(model.events.reversed()) { event in
+                            item(event: event)
+                        }
+                        .onDelete { offsets in
+                            withAnimation {
+                                model.events.remove(atOffsets: offsets)
+                            }
+                        }
                     }
                 }
             }
@@ -46,11 +54,6 @@ struct EventsView: View {
                     .font(.subheadline)
             }
         }
-        .swipeActions {
-            Button("Удалить") {
-                model.events.removeAll(where: { $0 == event })
-            }.tint(.red)
-        }
     }
 }
 
@@ -62,26 +65,5 @@ private let dateFormatter: DateFormatter = {
 }()
 
 #Preview {
-    let vitamins = EventType(name: "💊 Витамины")
-    let headache = EventType(name: "🤯 Мигрень")
-    let iron = EventType(name: "💨 Утюг")
-    let door = EventType(name: "🚪 Дрерь")
-    let fire = EventType(name: "🔥 Духовка")
-
-    let model = {
-        let m = Model()
-        m.types = [
-            vitamins,
-            headache,
-            iron,
-            door,
-            fire
-        ]
-        m.events = [
-            Event(type: vitamins, date: .now, description: ""),
-            Event(type: headache, date: .now, description: "")
-        ]
-        return m
-    }()
-    EventsView(model: model)
+    EventsView(model: Model())
 }

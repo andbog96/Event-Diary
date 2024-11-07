@@ -1,5 +1,5 @@
 import Foundation
-import Observation
+import SwiftData
 
 struct EventType: Identifiable, Hashable, Codable {
     let name: String
@@ -19,7 +19,7 @@ struct Event: Identifiable, Hashable, Codable {
     }
 }
 
-@Observable
+@Model
 final class Model: Codable {
     var types = [] as [EventType]
     var events = [] as [Event]
@@ -28,23 +28,29 @@ final class Model: Codable {
         let vitamins = EventType(name: "💊 Витамины")
         let headache = EventType(name: "🤯 Мигрень")
         let iron = EventType(name: "💨 Утюг")
-        let door = EventType(name: "🚪 Дрерь")
+        let door = EventType(name: "🚪 Дверь")
         let fire = EventType(name: "🔥 Духовка")
 
-        self.types = [
+        types = [
             vitamins,
             headache,
             iron,
             door,
             fire
         ]
-        self.events = []
+        events = []
+    }
+
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        types = try container.decode([EventType].self, forKey: ._types)
+        events = try container.decode([Event].self, forKey: ._events)
     }
 
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self._types, forKey: ._types)
-        try container.encode(self._events, forKey: ._events)
+        try container.encode(types, forKey: ._types)
+        try container.encode(events, forKey: ._events)
     }
 
     enum CodingKeys: String, CodingKey {

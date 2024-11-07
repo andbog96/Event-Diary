@@ -1,7 +1,8 @@
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
-    @State var model = Model()
+    let model: Model
 
     var body: some View {
         TabView {
@@ -23,7 +24,7 @@ struct ContentView: View {
                     Text("Настройки")
                 }
         }
-        
+
     }
 }
 
