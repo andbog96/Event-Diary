@@ -2,15 +2,21 @@ import Foundation
 import Observation
 
 struct EventType: Identifiable, Hashable, Codable {
-    let id: UUID
     let name: String
+
+    var id: Int {
+        hashValue
+    }
 }
 
-struct Event: Identifiable, Codable {
-    let id: UUID
+struct Event: Identifiable, Hashable, Codable {
     let type: EventType
     let date: Date
     let description: String
+
+    var id: Int {
+        hashValue
+    }
 }
 
 @Observable
@@ -19,13 +25,20 @@ final class Model: Codable {
     var events = [] as [Event]
 
     init() {
-        let type = EventType(id: UUID(), name: "type name")
-        let type2 = EventType(id: UUID(), name: "type name 2")
+        let vitamins = EventType(name: "💊 Витамины")
+        let headache = EventType(name: "🤯 Мигрень")
+        let iron = EventType(name: "💨 Утюг")
+        let door = EventType(name: "🚪 Дрерь")
+        let fire = EventType(name: "🔥 Духовка")
 
-        self.types = [type, type2]
-        self.events = [
-            Event(id: UUID(), type: type, date: Date(), description: "qwewqe\nqwewewqe")
+        self.types = [
+            vitamins,
+            headache,
+            iron,
+            door,
+            fire
         ]
+        self.events = []
     }
 
     func encode(to encoder: any Encoder) throws {

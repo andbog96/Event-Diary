@@ -46,7 +46,7 @@ struct AddEventView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Добавить") {
-                        model.events.append(Event(id: UUID(), type: selectedType, date: date, description: description))
+                        model.events.append(Event(type: selectedType, date: date, description: description))
                         isPresented = false
                     }
                 }

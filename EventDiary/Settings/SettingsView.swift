@@ -1,29 +1,13 @@
 import SwiftUI
 import Foundation
 
-// функция для экспорта
-func encode(model: Model){
-    let encoder = JSONEncoder()
-    let data = try! encoder.encode(model)
-    print(String(data: data, encoding: .utf8)!)
-}
-
-// удаление всех данных модели
-func deletedata(model: Model){
-    model.events.removeAll()
-    model.types.removeAll()
-
-}
-
 struct SettingView: View {
     let model: Model
 
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                Button(action: {
-                    encode(model: model)
-                }) {
+                ShareLink(item: String(data: try! JSONEncoder().encode(model), encoding: .utf8)!) {
                     Label("Экспорт", systemImage: "square.and.arrow.up")
                         .font(.headline)
                         .padding()
@@ -33,12 +17,11 @@ struct SettingView: View {
                         .cornerRadius(10)
                 }
 
-
                 Button(action: {
-                    // Действие для третьей кнопки
-                    deletedata(model: model)
+                    model.events = []
+                    model.types = []
                 }) {
-                    Label("Удалить", systemImage: "trash.fill")
+                    Label("Стереть", systemImage: "trash.fill")
                         .font(.headline)
                         .padding()
                         .frame(maxWidth: .infinity)

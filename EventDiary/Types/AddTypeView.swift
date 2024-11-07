@@ -21,7 +21,7 @@ struct AddTypeView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Добавить") {
-                        model.types.append(.init(id: UUID(), name: name))
+                        model.types.append(EventType(name: name))
                         isPresented = false
                     }
                     .disabled(name.isEmpty)

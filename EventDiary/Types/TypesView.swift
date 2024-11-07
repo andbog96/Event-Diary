@@ -7,8 +7,21 @@ struct TypesView: View {
 
     var body: some View {
         NavigationStack {
-            List(model.types) { type in
-                Text(type.name)
+            Group {
+                if model.types.isEmpty {
+                    ContentUnavailableView("Добавьте типы событий", systemImage: "tray")
+                        .padding()
+                } else {
+                    List(model.types) { type in
+                        Text(type.name)
+                            .swipeActions {
+                                Button("Удалить") {
+                                    model.types.removeAll(where: { $0 == type })
+                                    model.events.removeAll(where: { $0.type == type })
+                                }.tint(.red)
+                            }
+                    }
+                }
             }
             .navigationTitle("Типы событий")
             .toolbar {
