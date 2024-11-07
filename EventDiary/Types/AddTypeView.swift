@@ -11,6 +11,7 @@ struct AddTypeView: View {
             Form {
                 TextField("Название", text: $name)
             }
+            .scrollDismissesKeyboard(.immediately)
             .navigationTitle("Новый тип")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

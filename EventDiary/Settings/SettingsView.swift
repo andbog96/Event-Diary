@@ -4,6 +4,8 @@ import Foundation
 struct SettingView: View {
     let model: Model
 
+    @State private var isConfirmationDialogPresented = false
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -17,21 +19,25 @@ struct SettingView: View {
                         .cornerRadius(10)
                 }
 
-                Button(action: {
-                    model.events = []
-                    model.types = []
-                }) {
-                    Label("Стереть", systemImage: "trash.fill")
-                        .font(.headline)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                Button("Стереть", systemImage: "trash.fill") {
+                    isConfirmationDialogPresented = true
                 }
+                .font(.headline)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .disabled(model.events.isEmpty && model.types.isEmpty)
             }
             .padding()
             .navigationTitle("Настройки")
+            .confirmationDialog("Удалить все данные?", isPresented: $isConfirmationDialogPresented) {
+                Button("Удалить", role: .destructive) {
+                    model.events = []
+                    model.types = []
+                }
+            }
         }
     }
 }

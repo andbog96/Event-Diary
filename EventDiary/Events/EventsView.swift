@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftData
 
 struct EventsView: View {
     let model: Model

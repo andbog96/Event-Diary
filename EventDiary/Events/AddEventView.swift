@@ -36,6 +36,7 @@ struct AddEventView: View {
                         .datePickerStyle(WheelDatePickerStyle())
                 }
             }
+            .scrollDismissesKeyboard(.immediately)
             .navigationTitle("Новое событие")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

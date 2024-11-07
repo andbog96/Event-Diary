@@ -3,20 +3,12 @@ import SwiftData
 
 struct EventType: Identifiable, Hashable, Codable {
     let name: String
-
-    var id: Int {
-        hashValue
-    }
 }
 
 struct Event: Identifiable, Hashable, Codable {
     let type: EventType
     let date: Date
     let description: String
-
-    var id: Int {
-        hashValue
-    }
 }
 
 @Model
@@ -56,5 +48,11 @@ final class Model: Codable {
     enum CodingKeys: String, CodingKey {
         case _types = "types"
         case _events = "events"
+    }
+}
+
+extension Hashable where Self: Identifiable {
+    var id: Int {
+        hashValue
     }
 }
