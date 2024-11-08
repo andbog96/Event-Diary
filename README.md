@@ -9,8 +9,7 @@
 А что, если сделать одно приложение, в котором можно самостоятельно задать тип события? 
 
 ### Презентация
-https://drive.google.com/file/d/1t484HFqiNA891tvu0thonlbiHDeQlKm4/view?usp=sharing
-
+https://drive.google.com/file/d/1yrmPYDpFdlNEB4NoeYatICU0WE9e1viN/view?usp=sharing
 ### Функциональность
 
 1) Добавление нового типа события: Пользователь может создать новый тип события, указав его название.
